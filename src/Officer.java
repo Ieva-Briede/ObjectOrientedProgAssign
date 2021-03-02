@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Officer {
@@ -6,21 +7,22 @@ public class Officer {
     String surname;
     int officerID;
     String workingDistrict;
-    int crimedSolved;
+    int crimesSolved;
 
-    public Officer(){
+    public Officer() {
 
     }
 
-    public Officer(String name, String surname, int officerID, String workingDistrict, int crimedSolved){
+    public Officer(String name, String surname, int officerID, String workingDistrict, int crimedSolved) {
         this.name = name;
         this.surname = surname;
         this.officerID = officerID;
         this.workingDistrict = workingDistrict;
-        this.crimedSolved = crimedSolved;
+        this.crimesSolved = crimedSolved;
 
 
     }
+
     public String getName() {
         return name;
     }
@@ -54,11 +56,11 @@ public class Officer {
     }
 
     public int getCrimedSolved() {
-        return crimedSolved;
+        return crimesSolved;
     }
 
     public void setCrimedSolved(int crimedSolved) {
-        this.crimedSolved = crimedSolved;
+        this.crimesSolved = crimedSolved;
     }
 
     @Override
@@ -68,25 +70,40 @@ public class Officer {
                 ", surname = " + surname +
                 ", officerID = " + officerID +
                 ", workingDistrict = " + workingDistrict +
-                ", crimedSolved = " + crimedSolved;
+                ", crimedSolved = " + crimesSolved;
     }
 
-    public int calculateLevel(int crimedSolved){
-        int level = 0;
-        switch (level){
-            case 1:
-                if (crimedSolved<20 || crimedSolved>=0);
-                break;
-            case 2:
-                if (crimedSolved>=20 || crimedSolved<40);
-                break;
-            case 3:
-                if (crimedSolved>=40);
-                break;
-            default:
-                return -1;
-        } return level;
+    public int calculateLevel() {
+        if (crimesSolved < 0) {
+            return -1;
+        }
+        if (crimesSolved < 20) {
+            return 1;
+        }
+        if (crimesSolved < 40) {
+            return 2;
+        }
+        if (crimesSolved >= 40) {
+            return 3;
 
+        }
+        return -1;
     }
+
+//    public Officer newOfficer() {
+//
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Officer' s name: ");
+//        name = input.nextLine();
+//        System.out.println("Officers' surname: ");
+//        surname = input.nextLine();
+//        System.out.println("Officers' ID number: ");
+//        officerID = input.nextInt();
+//        System.out.println("Officer' s working district: ");
+//        workingDistrict = input.nextLine();
+//        System.out.println("Crimes solved: ");
+//        crimesSolved = input.nextInt();
+//
+
 
 }
