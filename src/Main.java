@@ -46,21 +46,9 @@ public class Main {
         } else {
             System.out.println("There are not officers with name John");
         }
+        Officer officer4= new Officer();
+        System.out.println(officer4.newOfficer());
 
-        Officer officer4 = new Officer();
-        Scanner input = new Scanner(System.in);
-        System.out.println("Officer' s name: ");
-        officer4.name = input.nextLine();
-        System.out.println("Officers' surname: ");
-        officer4.surname = input.nextLine();
-        System.out.println("Officers' ID number: ");
-        officer4.officerID = input.nextInt();
-        System.out.println("Officer' s working district: ");
-        officer4.workingDistrict = input.nextLine();
-        System.out.println("Crimes solved: ");
-        officer4.crimesSolved = input.nextInt();
-
-        System.out.println("New officer: " + officer4.toString());
 
         district99.add(officer4);
         System.out.println("All officers: " + district99);

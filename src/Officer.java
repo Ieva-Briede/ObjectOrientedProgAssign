@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -90,20 +91,22 @@ public class Officer {
         return -1;
     }
 
-//    public Officer newOfficer() {
-//
-//        Scanner input = new Scanner(System.in);
-//        System.out.println("Officer' s name: ");
-//        name = input.nextLine();
-//        System.out.println("Officers' surname: ");
-//        surname = input.nextLine();
-//        System.out.println("Officers' ID number: ");
-//        officerID = input.nextInt();
-//        System.out.println("Officer' s working district: ");
-//        workingDistrict = input.nextLine();
-//        System.out.println("Crimes solved: ");
-//        crimesSolved = input.nextInt();
-//
+    public static Officer newOfficer() {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Officer' s name: ");
+            String name = input.nextLine();
+            System.out.println("Officers' surname: ");
+            String surname = input.nextLine();
+            System.out.println("Officers' ID number: ");
+            int officerID = input.nextInt();
+            System.out.println("Officer' s working district: ");
+            input.nextLine();
+            String workingDistrict = input.nextLine();
+            System.out.println("Crimes solved: ");
+            int crimesSolved = input.nextInt();
+            return new Officer(name, surname, officerID, workingDistrict, crimesSolved);
 
+        }
 
-}
+    }
+
